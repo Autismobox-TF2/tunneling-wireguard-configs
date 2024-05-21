@@ -27,6 +27,7 @@ Assumes you have OS firewall enabled (e.g. `ufw enable`, watch out and don't loc
 8. Pterodactyl server: Run `wg setconf wg0 /etc/wireguard/pterodactyl-wg0.conf` to link the config file to your network interface
 9. Pterodactyl server: Run `wg genkey | tee privatekey | wg pubkey > publickey` to generate your private and public keys for the network interface
 10. Pterodactyl server: Run `cat privatekey` and `cat publickey`. Take note of these values somewhere, you'll need these to fill the configs later.
+11. Tunnel Server: Run `ip a` and note the top network interface you're using. Should be something like `eth0` or `ens`. Should NOT be `loop` or something similar. If it is, pick the network interface below that one. You will need this for the config file.
 12. Edit both .conf files with the appropriate values for your servers
 13. Run `wg-quick up wg0` on both servers to activate the tunnel. If you get a "wg0 already exists" popup, run `wg-quick down wg0` and then `wg-quick up wg0` **WARNING: Always run `wg-quick down wg0` before editing a config file, otherwise you will cause changes which will require manual tinkering with iptables to revert!**
 14. Continue to chapter 2.
