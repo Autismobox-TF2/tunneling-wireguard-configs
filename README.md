@@ -1,5 +1,6 @@
 # tunneling-wireguard-configs
 Autismobox server traffic is tunneled.
+This repo contains instructions and config files to tunnel team fortress 2 game traffic.
 Client (tf2 player) -> Tunneling server (VPS) -> Pterodactyl server -> containers (Running game servers, e.g. tf2)
 Wireguard is used to tunnel this traffic. 
 If you can find a VPS close to your production server, the latency difference is barely noticable.
