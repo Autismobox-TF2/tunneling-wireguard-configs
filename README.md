@@ -1,4 +1,5 @@
 # tunneling-wireguard-configs
+!Warning! While this setup works, the tunneled server won't properly announce itself to Steam's master server (it wont show up in the server browser) Currently looking for a fix.
 Autismobox server traffic is tunneled.
 
 This repo contains instructions and config files to tunnel team fortress 2 game traffic.
