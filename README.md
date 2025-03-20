@@ -22,11 +22,9 @@ Assumes you have OS firewall enabled (e.g. `ufw enable`, watch out and don't loc
 1. Install wireguard `sudo apt install wireguard` on both servers (Tunneling and Pterodactyl)
 2. Create the wireguard network interface `ip link add dev wg0 type wireguard` on both servers
 3. Tunneling server: download the 'tunneling-wg0.conf' file and put it into your '/etc/wireguard/' folder
-4. Tunneling server: Run `wg setconf wg0 /etc/wireguard/tunneling-wg0.conf` to link the config file to your network interface
 5. Tunneling server: Run `wg genkey | tee privatekey | wg pubkey > publickey` to generate your private and public keys for the network interface
 6. Tunneling server: Run `cat privatekey` and `cat publickey`. Take note of these values somewhere, you'll need these to fill the configs later.
 7. Pterodactyl server: download the 'pterodactyl-wg0.conf' file and put it into your '/etc/wireguard/' folder
-8. Pterodactyl server: Run `wg setconf wg0 /etc/wireguard/pterodactyl-wg0.conf` to link the config file to your network interface
 9. Pterodactyl server: Run `wg genkey | tee privatekey | wg pubkey > publickey` to generate your private and public keys for the network interface
 10. Pterodactyl server: Run `cat privatekey` and `cat publickey`. Take note of these values somewhere, you'll need these to fill the configs later.
 11. Tunnel Server: Run `ip a` and note the top network interface you're using. Should be something like `eth0` or `ens`. Should NOT be `loop` or something similar. If it is, pick the network interface below that one. You will need this for the config file.
